@@ -29,13 +29,17 @@ public class loginPageTest {
     }
 
     @Test
-    public void verifyLogin() {
+    public void verifyLogin() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.clickAccountButton();
 
         AccountPage accountPage = new AccountPage(driver);
         accountPage.enterUsername("ddroy13@gmail.com");
         accountPage.enterPassword("777777777");
+        accountPage.clickSignInButton();
+
+        Thread.sleep(4000);
+        driver.quit();
     }
 
 
